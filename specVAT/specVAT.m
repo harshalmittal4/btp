@@ -3,7 +3,7 @@ clear all;
 close all;
 
 neighbor_num = 6;         %% Number of neighbors to consider in local scaling
-max_eigvalues = 11;
+max_eigvalues = 7;
 
 %%%%%%%%%%%%%%% load data 
 %load Data6.mat;
@@ -13,7 +13,8 @@ max_eigvalues = 11;
      
     
 %% centralize and scale the data
-X = xlsread('data1.xlsx')
+X1 = csvread('data.csv')
+X = X1(:, 1:2)
 X = X - repmat(mean(X),size(X,1),1);
 X = X/max(max(abs(X)));
 
@@ -112,7 +113,7 @@ V_this_D=distance2(V_this,V_this);
 [RiV,RV,reordering_mat]=iVAT(RV);
 figure; imagesc(RiV); colormap(gray); axis image; axis off;
 
-folder = '/home/harshal/Desktop/Automatic cluster detection using machine learning/1'
+folder = '/home/harshal/Desktop/Clustering/specVAT/1'
 %save to folder
 baseFileName_ = sprintf('ivat#%d.eps', index_);
 fullFileName_ = fullfile(folder, baseFileName_);
