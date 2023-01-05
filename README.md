@@ -1,4 +1,4 @@
-The flowchart to get an understanding of the proposed algorithm and steps followed, for training data generation, training, and inference are as shown:
+The proposed algorithm flowchart and the steps followed for training data generation, training, and inference are as shown:
 
 <br>
 
